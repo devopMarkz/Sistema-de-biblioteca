@@ -1,0 +1,11 @@
+Sistema biblioteca
+
+a biblioteca tem N livros disponíveis para alugar
+
+os alunos alugam mas precisam de um cadastro
+
+o cadastro tem id e senha do aluno
+
+cada livro tem acesso gratuito durante uma semana
+
+passou de uma semana, a taxa cobrada é de 2 reais por dia
