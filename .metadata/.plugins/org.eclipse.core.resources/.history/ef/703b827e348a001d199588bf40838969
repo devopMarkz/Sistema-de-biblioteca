@@ -1,0 +1,17 @@
+package fileSearchOfStudentRegister;
+
+import java.util.List;
+
+import studentEntities.Register;
+
+public class StudentRegisterSearchService implements RegisterSearchService{
+
+	@Override
+	public List<Register> getStudentRegister() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

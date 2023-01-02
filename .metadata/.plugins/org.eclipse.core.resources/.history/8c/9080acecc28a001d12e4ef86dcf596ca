@@ -1,0 +1,39 @@
+package libraryAcessSystem;
+
+import studentEntities.Student;
+
+public class LibrarySystem {
+	
+	private Student student;
+	private LibrarySearchService searchBooksLibrary;
+	
+	// Construtores da classe
+	
+	public LibrarySystem() {
+	}
+	
+	public LibrarySystem(Student student, LibrarySearchService searchBooksLibrary) {
+		this.student = student;
+		this.searchBooksLibrary = searchBooksLibrary;
+	}
+	
+	// Getters e setters
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public LibrarySearchService getSearchBooksLibrary() {
+		return searchBooksLibrary;
+	}
+
+	public void setSearchBooksLibrary(LibrarySearchService searchBooksLibrary) {
+		this.searchBooksLibrary = searchBooksLibrary;
+	}
+	
+
+}

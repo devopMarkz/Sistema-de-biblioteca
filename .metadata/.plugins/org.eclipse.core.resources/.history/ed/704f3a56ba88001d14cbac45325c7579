@@ -1,0 +1,5 @@
+package bookArchiveSearch;
+
+public interface FileSearchService {
+
+}

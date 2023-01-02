@@ -10,6 +10,10 @@ public class Book {
 	public Book() {
 	}
 	
+	public Book(String title) {
+		this.title = title;
+	}
+	
 	public Book(String title, Boolean rented) {
 		this.title = title;
 		this.rented = rented;
@@ -31,6 +35,13 @@ public class Book {
 
 	public void setRented(Boolean rented) {
 		this.rented = rented;
+	}
+	
+	// Métodos da classe
+	
+	@Override
+	public String toString() {
+		return this.title + "," + this.rented;
 	}
 	
 }

@@ -1,0 +1,7 @@
+package fileSearchOfStudentRegister;
+
+public interface RegisterSearchService {
+	
+	List<Register> getStudentRegister();
+
+}

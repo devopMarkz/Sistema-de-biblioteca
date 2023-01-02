@@ -1,0 +1,59 @@
+package application;
+
+import java.util.Scanner;
+
+import bookArchiveSearch.BookArchiveSearchService;
+import fileSearchOfStudentRegister.StudentRegisterSearchService;
+import library.Book;
+import library.Library;
+import libraryAcessSystem.AccessValidationService;
+import libraryAcessSystem.LibrarySystem;
+import studentEntities.Student;
+
+public class Program {
+	
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		
+		Library l = new Library(new BookArchiveSearchService()); // Instanciando Library e injetando dependência
+		
+		System.out.print("Digite seu acesso: ");
+		String id = sc.nextLine();
+		System.out.print("Digite sua senha: ");
+		String password = sc.next();
+		
+		AccessValidationService as = new AccessValidationService(new StudentRegisterSearchService()); // Validação de senha
+		
+		Student student = as.giveStudentAccess(id, password); // Validação de senha
+		
+		if (student != null) {
+			System.out.println("Cadastro liberado, " + student.getRegister().getId());
+			
+			LibrarySystem lys = new LibrarySystem(student, l);
+			
+			System.out.println("Escolha o livro que deseja alugar: ");
+			for (Book books : lys.getSearchBooksLibrary().getBookList()) {
+				System.out.println(books);
+			}
+			
+			// Faltando Library System, tratamento de nullpointerexception para caso de listas dos arquivos retornarem vazias
+			// interface que liga Library com LibrarySystem e cálculo de invoice
+		}
+		else {
+			System.out.println("Cadastro negado!");
+		}
+		
+		
+	
+//		for (Book book : l.getBookList()) {
+//		System.out.println(book.getTitle());
+//		}
+		
+		
+		
+		
+
+	}
+
+}

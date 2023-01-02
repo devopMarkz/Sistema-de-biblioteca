@@ -1,0 +1,40 @@
+package libraryAccessSystem.invoiceServices;
+
+import java.time.LocalDate;
+
+import libraryAccessSystem.LibrarySystem;
+import studentEntities.Invoice;
+
+public class ProcessInvoiceService {
+	
+	private FeeService fee;
+	
+	// Construtores da classe
+	
+	public ProcessInvoiceService() {
+	}
+
+	public ProcessInvoiceService(FeeService fee) {
+		this.fee = fee;
+	}
+	
+	// Getters e setters
+
+	public FeeService getFee() {
+		return fee;
+	}
+
+	public void setFee(FeeService fee) {
+		this.fee = fee;
+	}
+	
+	// Métodos da classe
+	
+	public void processInvoice (LibrarySystem librarySystem, LocalDate rentDate, LocalDate returnDate) {
+		double basicQuote = 0;
+		double bookRentalPrice = basicQuote + this.getFee().getFee(rentDate, returnDate);
+		
+		librarySystem.getStudent().setInvoice(new Invoice(bookRentalPrice));
+	}
+
+}

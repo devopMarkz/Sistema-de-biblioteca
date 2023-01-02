@@ -1,0 +1,9 @@
+package utilities;
+
+public class PrintListService {
+	
+	public static void<T> T (List<?> lista) {
+		
+	}
+
+}

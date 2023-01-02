@@ -1,0 +1,15 @@
+package libraryAcessSystem;
+
+import studentEntities.Student;
+
+public class AccessValidationService implements ValidationService {
+	
+	
+
+	@Override
+	public Student giveStudentAccess(Student student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

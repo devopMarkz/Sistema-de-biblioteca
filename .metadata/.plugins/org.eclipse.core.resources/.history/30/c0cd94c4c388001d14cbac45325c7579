@@ -1,0 +1,16 @@
+package bookArchiveSearch;
+
+import java.io.File;
+import java.util.List;
+
+import library.Book;
+
+public interface FileSearchService {
+	
+	default File getFile() {
+		
+	}
+	
+	List<Book> getBookListFile();
+
+}

@@ -1,0 +1,15 @@
+package libraryAccessSystem.services;
+
+import libraryAccessSystem.LibrarySystem;
+
+public class CheckExistenceBookService {
+	
+	public void chosenBookProcessing(LibrarySystem librarySystem, String chosenBook) {
+		
+		for (Book book : librarySystem.getSearchBooksLibrary().getBookList()) {
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,18 @@
+package library;
+
+public class Book {
+	
+	private String title;
+	private Boolean rented;
+	
+	public Book() {
+	}
+	
+	public Book(String title, Boolean rented) {
+		this.title = title;
+		this.rented = rented;
+	}
+	
+	
+	
+}

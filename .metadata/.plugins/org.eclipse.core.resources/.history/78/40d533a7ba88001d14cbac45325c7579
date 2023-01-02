@@ -1,0 +1,16 @@
+package bookArchiveSearch;
+
+import java.util.ArrayList;
+
+import library.Book;
+
+public class BookArchiveSearchService implements FileSearchService {
+
+	@Override
+	public ArrayList<Book> getBookListFile() {
+		return null;
+	}
+
+	
+	
+}

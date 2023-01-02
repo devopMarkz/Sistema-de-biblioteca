@@ -1,0 +1,11 @@
+package studentEntities;
+
+import library.Book;
+
+public class Student {
+	
+	private Book book;
+	
+	private 
+
+}

@@ -1,0 +1,25 @@
+1672615756482	Delete element
+1672682703547	Rename package 'bookArchiveSearch'
+1672682773349	Rename package 'libraryAcessSystem'
+1672682795663	Rename package 'fileSearchOfStudentRegister'
+1672683393132	Move compilation unit
+1672683403210	Move compilation unit
+1672683546204	Move compilation unit
+1672684074281	Rename type 'BookCheckingService'
+1672684118102	Rename type 'AccessValidationService'
+1672684184788	Rename type 'LibrarySearchService'
+1672684217588	Rename type 'ValidationService'
+1672684245749	Rename type 'LibraryAccessValidationService'
+1672684367792	Rename type 'LibrarySyAccessValidationService'
+1672688694612	Rename type 'InextlentBookException'
+1672688702689	Delete element
+1672690179328	Move compilation unit
+1672690186250	Move compilation unit
+1672690223538	Move compilation unit
+1672690230587	Move compilation unit
+1672690242895	Move compilation unit
+1672690377168	Rename package 'libraryAccessSystem.registerServices'
+1672690439075	Rename package 'libraryAccessSystem.registerCheckingServices'
+1672690495884	Move compilation unit
+1672690548887	Rename package 'libraryAccessSystem.checkBooks'
+1672690573819	Rename package 'libraryAccessSystem.services'

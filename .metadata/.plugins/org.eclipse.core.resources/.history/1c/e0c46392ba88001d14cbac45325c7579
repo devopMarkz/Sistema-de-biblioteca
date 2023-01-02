@@ -1,0 +1,5 @@
+package bookArchiveSearch;
+
+public class BookArchiveSearchService implements FileSearchService {
+
+}

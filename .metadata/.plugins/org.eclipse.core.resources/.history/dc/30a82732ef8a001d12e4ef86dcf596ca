@@ -1,0 +1,11 @@
+package libraryAccessSystem.searchBooksServices;
+
+import java.util.List;
+
+import library.Book;
+
+public interface SearchBooksInLibraryService {
+
+	List<Book> getBookList();
+	
+}

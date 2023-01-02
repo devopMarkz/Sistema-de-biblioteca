@@ -1,0 +1,36 @@
+package bookArchiveSearch;
+
+import java.awt.print.Book;
+import java.io.File;
+import java.util.ArrayList;
+
+public class BookArchiveSearchService implements FileSearchService{
+	
+	private FileStorageService bookListFile;
+	
+	// Construtores da classe
+	
+	public BookArchiveSearchService() {
+	}
+
+	public BookArchiveSearchService(FileStorageService bookListFile) {
+		this.bookListFile = bookListFile;
+	}
+	
+	// Métodos getters e setters
+
+	public FileStorageService getBookListFile() {
+		return bookListFile;
+	}
+
+	public void setBookListFile(FileStorageService bookListFile) {
+		this.bookListFile = bookListFile;
+	}
+	
+	// Métodos da classe
+
+	@Override
+	public ArrayList<Book> getBookListFile(File bookListFile) {
+		List<Book>
+	}
+}

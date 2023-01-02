@@ -1,0 +1,19 @@
+package libraryAcessSystem;
+
+import studentEntities.Student;
+
+public class LibrarySystem {
+	
+	private Student student;
+	private LibrarySearchService searchBooksInTheLibrary;
+	
+	public LibrarySystem() {
+	}
+	
+	public LibrarySystem(Student student, LibrarySearchService searchBooksInTheLibrary) {
+		this.student = student;
+		this.searchBooksInTheLibrary = searchBooksInTheLibrary;
+	}
+	
+
+}

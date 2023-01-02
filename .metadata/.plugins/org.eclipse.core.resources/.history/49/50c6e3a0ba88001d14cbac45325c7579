@@ -1,0 +1,11 @@
+package bookArchiveSearch;
+
+import java.util.ArrayList;
+
+import library.Book;
+
+public interface FileSearchService {
+	
+	ArrayList<Book> getBookListFile(File bookListFile);
+
+}

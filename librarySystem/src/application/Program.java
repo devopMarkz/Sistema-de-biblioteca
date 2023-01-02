@@ -1,18 +1,74 @@
 package application;
 
-import bookArchiveSearch.BookArchiveSearchService;
-import library.Book;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
 import library.Library;
+import library.services.BookArchiveSearchService;
+import libraryAccessSystem.LibrarySystem;
+import libraryAccessSystem.checkBooksServices.CheckExistenceBookService;
+import libraryAccessSystem.invoiceServices.LibrarySystemFeeService;
+import libraryAccessSystem.invoiceServices.ProcessInvoiceService;
+import libraryAccessSystem.logCheckingServices.StudentRegisterSearchService;
+import libraryAccessSystem.validationServices.AccessValidationServiceOnLibrarySystem;
+import studentEntities.Student;
+import utilities.PrintListService;
 
 public class Program {
+	
+	private static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		
-		Library l = new Library(new BookArchiveSearchService());
+		Library library = new Library(new BookArchiveSearchService()); // Instanciando Library e injetando dependência
 		
-		for (Book book : l.getBookList()) {
-			System.out.println(book);
+		LibrarySystem librarySystem = new LibrarySystem(library); // Instanciando sistema de acesso à livraria
+		
+		System.out.print("Digite seu acesso: ");
+		String id = sc.nextLine();
+		System.out.print("Digite sua senha: ");
+		String password = sc.next();
+		
+		AccessValidationServiceOnLibrarySystem as = new AccessValidationServiceOnLibrarySystem(new StudentRegisterSearchService()); // Validação de senha
+		
+		Student student = as.giveStudentAccess(id, password); // Validação de senha
+		
+		if (student != null) { // Tratar NullPointerException
+			System.out.println("Cadastro liberado, " + student.getRegister().getId());
+			
+			librarySystem.setStudent(student); // Add estudante em lisystem no caso de cadastro aceito
+			
+			System.out.println("Livros disponíveis: ");
+			PrintListService.printList(librarySystem.getSearchBooksLibrary().getBookList());
+			
+			sc.nextLine();
+			
+			System.out.print("\nLivro que deseja alugar: ");
+			String chosenBook = sc.nextLine();
+			
+			CheckExistenceBookService.chosenBookProcessing(librarySystem, chosenBook); // Checa existência do livro
+			
+			System.out.print("Data de aluguel do livro: ");
+			LocalDate rentDate = LocalDate.parse(sc.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+			System.out.print("Data de devolução do livro: ");
+			LocalDate returnDate = LocalDate.parse(sc.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+			
+			ProcessInvoiceService processInvoice = new ProcessInvoiceService(new LibrarySystemFeeService());
+			
+			processInvoice.processInvoice(librarySystem, rentDate, returnDate);
+			
+			
+			System.out.println(librarySystem.getStudent().toString());
+			
+			//Faltando Library System, tratamento de nullpointerexception para caso de listas dos arquivos retornarem vazias
+			//interface que liga Library com LibrarySystem e cálculo de invoice
 		}
+		else {
+			System.out.println("Cadastro negado!");
+		}
+		
+		librarySystem.checkRentedBooks();
 
 	}
 

@@ -1,0 +1,49 @@
+package libraryAccessSystem;
+
+import java.util.List;
+
+import library.Book;
+import libraryAccessSystem.searchBooksServices.SearchBooksInLibraryService;
+import studentEntities.Student;
+import utilities.PrintListService;
+
+public class LibrarySystem {
+	
+	private Student student;
+	private SearchBooksInLibraryService searchBooksLibrary;
+	
+	// Construtores da classe
+	
+	public LibrarySystem() {
+	}
+	
+	public LibrarySystem(SearchBooksInLibraryService searchBooksLibrary) {
+		this.searchBooksLibrary = searchBooksLibrary;
+	}
+	
+	// Getters e setters
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public SearchBooksInLibraryService getSearchBooksLibrary() {
+		return searchBooksLibrary;
+	}
+
+	public void setSearchBooksLibrary(SearchBooksInLibraryService searchBooksLibrary) {
+		this.searchBooksLibrary = searchBooksLibrary;
+	}
+	
+	// Métodos da classe
+	
+	public void viewBooks() {
+		PrintListService.printList(getSearchBooksLibrary().getBookList());
+	}
+	
+
+}

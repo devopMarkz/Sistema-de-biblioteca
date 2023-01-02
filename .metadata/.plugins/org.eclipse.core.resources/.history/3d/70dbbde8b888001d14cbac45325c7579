@@ -1,0 +1,14 @@
+package bookArchiveSearch;
+
+public class BookArchiveSearchService {
+	
+	private FileStorageService bookListFile;
+	
+	public BookArchiveSearchService() {
+	}
+
+	public BookArchiveSearchService(FileStorageService bookListFile) {
+		this.bookListFile = bookListFile;
+	}
+
+}

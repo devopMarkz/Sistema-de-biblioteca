@@ -1,0 +1,35 @@
+package application;
+
+import java.util.Scanner;
+
+import bookArchiveSearch.BookArchiveSearchService;
+import fileSearchOfStudentRegister.StudentRegisterSearchService;
+import library.Book;
+import library.Library;
+import libraryAcessSystem.AccessValidationService;
+import studentEntities.Student;
+
+public class Program {
+	
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		
+		System.out.print("Digite seu acesso: ");
+		String id = sc.nextLine();
+		System.out.print("Digite sua senha: ");
+		String password = sc.next();
+		
+		AccessValidationService as = new AccessValidationService(new StudentRegisterSearchService());
+		
+		as.giveStudentAccess(st);
+		
+//		Library l = new Library(new BookArchiveSearchService());
+//		
+//		for (Book book : l.getBookList()) {
+//			System.out.println(book.getTitle());
+//		}
+
+	}
+
+}

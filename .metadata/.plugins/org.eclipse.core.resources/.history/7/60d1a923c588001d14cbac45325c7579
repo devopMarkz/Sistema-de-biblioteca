@@ -1,0 +1,19 @@
+package application;
+
+import java.util.Collections;
+import java.util.List;
+
+import bookArchiveSearch.BookArchiveSearchService;
+import library.Library;
+
+public class Program {
+
+	public static <T> void main(String[] args) {
+		
+		Library l = new Library(new BookArchiveSearchService());
+		
+		Collections.sort((List<T>) l.getBookList());
+
+	}
+
+}

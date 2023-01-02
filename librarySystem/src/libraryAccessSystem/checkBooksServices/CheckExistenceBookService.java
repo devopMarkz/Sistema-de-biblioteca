@@ -1,0 +1,21 @@
+package libraryAccessSystem.checkBooksServices;
+
+import exceptions.BookUnavailableException;
+import library.Book;
+import libraryAccessSystem.LibrarySystem;
+
+public class CheckExistenceBookService {
+	
+	public static void chosenBookProcessing(LibrarySystem librarySystem, String chosenBook) {
+		for (Book book : librarySystem.getSearchBooksLibrary().getBookList()) {
+			if (book.getTitle().equals(chosenBook) && book.getRented() == false) {
+				librarySystem.getStudent().setBook(new Book(chosenBook));
+			}
+		}
+		
+		if (librarySystem.getStudent().getBook() == null) {
+			throw new BookUnavailableException("Livro indisponível!");
+		}
+	}
+
+}

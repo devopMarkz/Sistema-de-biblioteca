@@ -1,0 +1,9 @@
+package bookArchiveSearch;
+
+import java.io.File;
+
+protected class FileStorageService {
+	
+	protected static File bookListFile = new File("C:\\Repositório local\\SistemaLivraria\\files\\BookList.csv");
+
+}

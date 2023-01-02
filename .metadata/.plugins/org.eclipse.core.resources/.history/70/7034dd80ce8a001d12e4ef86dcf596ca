@@ -1,0 +1,18 @@
+package libraryAccessSystem.services;
+
+import library.Book;
+import libraryAccessSystem.LibrarySystem;
+
+public class CheckExistenceBookService {
+	
+	public void chosenBookProcessing(LibrarySystem librarySystem, String chosenBook) {
+		
+		for (Book book : librarySystem.getSearchBooksLibrary().getBookList()) {
+			if (book.getTitle().equals(chosenBook) && Boolean.getBoolean(book.getRented()) != false) {
+				
+			}
+		}
+		
+	}
+
+}

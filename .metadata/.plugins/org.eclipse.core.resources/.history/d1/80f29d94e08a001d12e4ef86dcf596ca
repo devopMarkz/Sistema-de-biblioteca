@@ -1,0 +1,13 @@
+package libraryAccessSystem.invoiceServices;
+
+import java.time.LocalDate;
+
+public interface FeeService {
+	
+	Double calculateFee(LocalDate rentDate, LocalDate returnDate);
+	
+	private Double getFee() {
+		return calculateFee(LocalDate rentDate, LocalDate returnDate);
+	}
+
+}

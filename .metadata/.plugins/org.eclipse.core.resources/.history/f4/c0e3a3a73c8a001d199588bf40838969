@@ -1,0 +1,22 @@
+package application;
+
+import bookArchiveSearch.BookArchiveSearchService;
+import library.Book;
+import library.Library;
+import studentEntities.Student;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Student st = new Student();
+		
+		Library l = new Library(new BookArchiveSearchService());
+		
+		for (Book book : l.getBookList()) {
+			System.out.println(book.getTitle());
+		}
+
+	}
+
+}

@@ -1,0 +1,7 @@
+package bookArchiveSearch;
+
+public interface FileSearchService {
+	
+	ArrayList<Book> getBookListFile();
+
+}

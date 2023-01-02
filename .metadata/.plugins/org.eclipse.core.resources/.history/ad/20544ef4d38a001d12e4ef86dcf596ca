@@ -1,0 +1,71 @@
+package application;
+
+import java.util.Scanner;
+
+import library.Book;
+import library.Library;
+import library.services.BookArchiveSearchService;
+import libraryAccessSystem.LibrarySystem;
+import libraryAccessSystem.services.AccessValidationServiceOnLibrarySystem;
+import libraryAccessSystem.services.CheckExistenceBookService;
+import libraryAccessSystem.services.StudentRegisterSearchService;
+import studentEntities.Student;
+
+public class Program {
+	
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		
+		Library library = new Library(new BookArchiveSearchService()); // Instanciando Library e injetando dependência
+		
+		LibrarySystem librarySystem = new LibrarySystem(library);
+		
+		System.out.print("Digite seu acesso: ");
+		String id = sc.nextLine();
+		System.out.print("Digite sua senha: ");
+		String password = sc.next();
+		
+		AccessValidationServiceOnLibrarySystem as = new AccessValidationServiceOnLibrarySystem(new StudentRegisterSearchService()); // Validação de senha
+		
+		Student student = as.giveStudentAccess(id, password); // Validação de senha
+		
+		if (student != null) { // Tratar NullPointerException
+			System.out.println("Cadastro liberado, " + student.getRegister().getId());
+			
+			librarySystem.setStudent(student); // Add estudante em lisystem no caso de cadastro aceito
+			
+			System.out.println("Livros disponíveis: ");
+			for (Book books : librarySystem.getSearchBooksLibrary().getBookList()) {
+				System.out.println(books);
+			}
+			
+			sc.nextLine();
+			
+			System.out.print("\nLivro que deseja alugar: ");
+			String chosenBook = sc.nextLine();
+			
+			CheckExistenceBookService.chosenBookProcessing(librarySystem, chosenBook);
+			
+			System.out.println(librarySystem.getStudent().getBook().getTitle());
+			
+			// Faltando Library System, tratamento de nullpointerexception para caso de listas dos arquivos retornarem vazias
+			// interface que liga Library com LibrarySystem e cálculo de invoice
+		}
+		else {
+			System.out.println("Cadastro negado!");
+		}
+		
+		
+	
+//		for (Book book : l.getBookList()) {
+//		System.out.println(book.getTitle());
+//		}
+		
+		
+		
+		
+
+	}
+
+}

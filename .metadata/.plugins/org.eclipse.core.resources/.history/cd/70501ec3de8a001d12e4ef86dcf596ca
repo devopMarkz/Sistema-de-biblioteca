@@ -1,0 +1,29 @@
+package libraryAccessSystem.invoiceServices;
+
+public class ProcessInvoiceService {
+	
+	private FeeService Fee;
+	
+	// Construtores da classe
+	
+	public ProcessInvoiceService() {
+	}
+
+	public ProcessInvoiceService(FeeService fee) {
+		Fee = fee;
+	}
+	
+	// Getters e setters
+
+	public FeeService getFee() {
+		return Fee;
+	}
+
+	public void setFee(FeeService fee) {
+		Fee = fee;
+	}
+	
+	// Métodos da classe
+	
+
+}

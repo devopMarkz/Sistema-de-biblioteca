@@ -1,0 +1,15 @@
+package libraryAccessSystem.invoiceServices;
+
+import java.time.Duration;
+import java.time.LocalDate;
+
+public class LibrarySystemFeeService implements FeeService {
+
+	@Override
+	public Double getFee(LocalDate rentDate, LocalDate returnDate) {
+		return  (Duration.between(rentDate, returnDate).toDays() - 7) * 3;
+	}
+	
+	
+
+}

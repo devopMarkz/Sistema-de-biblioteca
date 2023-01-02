@@ -1,0 +1,25 @@
+package bookArchiveSearch;
+
+public class BookArchiveSearchService implements FileSearchService{
+	
+	private FileStorageService bookListFile;
+	
+	// Construtores da classe
+	
+	public BookArchiveSearchService() {
+	}
+
+	public BookArchiveSearchService(FileStorageService bookListFile) {
+		this.bookListFile = bookListFile;
+	}
+	
+	// Métodos getters e setters
+
+	public FileStorageService getBookListFile() {
+		return bookListFile;
+	}
+
+	public void setBookListFile(FileStorageService bookListFile) {
+		this.bookListFile = bookListFile;
+	}
+}

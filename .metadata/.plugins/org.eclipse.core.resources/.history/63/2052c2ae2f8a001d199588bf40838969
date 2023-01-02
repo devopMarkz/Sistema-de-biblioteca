@@ -1,0 +1,7 @@
+package libraryAcessSystem;
+
+public interface ValidationService {
+	
+	
+
+}

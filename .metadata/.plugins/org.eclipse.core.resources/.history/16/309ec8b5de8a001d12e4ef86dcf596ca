@@ -1,0 +1,24 @@
+package libraryAccessSystem.invoiceServices;
+
+public class ProcessInvoiceService {
+	
+	private FeeService Fee;
+	
+	public ProcessInvoiceService() {
+	}
+
+	public ProcessInvoiceService(FeeService fee) {
+		Fee = fee;
+	}
+
+	public FeeService getFee() {
+		return Fee;
+	}
+
+	public void setFee(FeeService fee) {
+		Fee = fee;
+	}
+	
+	
+
+}

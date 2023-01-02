@@ -1,0 +1,9 @@
+package exceptions;
+
+public class RentedBookException {
+	
+	public RentedBookException(String msg) {
+		super(msg);
+	}
+
+}

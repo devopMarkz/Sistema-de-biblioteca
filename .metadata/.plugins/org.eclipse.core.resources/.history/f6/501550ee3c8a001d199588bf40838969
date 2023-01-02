@@ -1,0 +1,29 @@
+package application;
+
+import java.util.Scanner;
+
+import bookArchiveSearch.BookArchiveSearchService;
+import library.Book;
+import library.Library;
+import studentEntities.Student;
+
+public class Program {
+	
+	private static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		
+		Student st = new Student();
+		
+		System.out.println("Digite seu acesso: ");
+		String id = sc.nextLine();
+		
+		Library l = new Library(new BookArchiveSearchService());
+		
+		for (Book book : l.getBookList()) {
+			System.out.println(book.getTitle());
+		}
+
+	}
+
+}

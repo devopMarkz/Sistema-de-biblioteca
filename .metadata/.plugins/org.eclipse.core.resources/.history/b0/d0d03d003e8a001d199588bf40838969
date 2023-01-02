@@ -1,0 +1,9 @@
+package libraryAcessSystem;
+
+import studentEntities.Student;
+
+public interface ValidationService {
+	
+	Student giveStudentAccess(Student student);
+
+}

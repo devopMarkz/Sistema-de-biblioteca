@@ -1,0 +1,11 @@
+package utilities;
+
+import java.util.List;
+
+public class PrintListService {
+	
+	public static void<T> T (List<?> lista) {
+		
+	}
+
+}

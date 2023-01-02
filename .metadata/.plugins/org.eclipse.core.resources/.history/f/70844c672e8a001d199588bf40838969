@@ -1,0 +1,31 @@
+package library;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import bookArchiveSearch.FileSearchService;
+import libraryAcessSystem.LibrarySearchService;
+
+public class Library implements LibrarySearchService{
+	
+	private List<Book> bookList = new ArrayList<>();
+	
+	public Library() {
+	}
+	
+	public Library(FileSearchService searchBooks) {
+		this.bookList = searchBooks.getBookListFile();
+	}
+
+	@Override
+	public List<Book> getBookList() {
+		return bookList;	
+	}
+
+	public void setBookList(List<Book> bookList) {
+		this.bookList = bookList;
+	}
+	
+	
+
+}

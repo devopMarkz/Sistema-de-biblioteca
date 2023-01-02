@@ -1,0 +1,17 @@
+package libraryAcessSystem;
+
+import java.util.ArrayList;
+
+import studentEntities.Student;
+
+public class AccessValidationService implements ValidationService {
+	
+	private List<Student> studentRegistrationList = new ArrayList<>();
+
+	@Override
+	public Student giveStudentAccess(Student student) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

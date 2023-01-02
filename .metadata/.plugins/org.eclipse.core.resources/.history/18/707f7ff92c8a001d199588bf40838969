@@ -1,0 +1,20 @@
+package studentEntities;
+
+public class Register {
+	
+	private String id;
+	private String password;
+	
+	// Construtores da classe
+	
+	public Register() {
+	}
+	
+	public Register(String id, String password) {
+		this.id = id;
+		this.password = password;
+	}
+	
+	
+
+}

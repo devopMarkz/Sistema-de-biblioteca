@@ -1,0 +1,10 @@
+package libraryAccessSystem.exceptions;
+
+@SuppressWarnings("serial")
+public class InextlentBookException extends RuntimeException {
+	
+	public InextlentBookException(String msg) {
+		super(msg);
+	}
+
+}

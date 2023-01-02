@@ -1,0 +1,15 @@
+package libraryAccessSystem.invoiceServices;
+
+import java.time.LocalDate;
+
+public class LibrarySystemFeeService implements FeeService {
+
+	@Override
+	public Double getFee(LocalDate rentDate, LocalDate returnDate) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

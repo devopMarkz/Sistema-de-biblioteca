@@ -1,0 +1,9 @@
+package libraryAccessSystem.services;
+
+public class BookCheckingService {
+	
+	public void chosenBookProcessing() {
+		
+	}
+
+}

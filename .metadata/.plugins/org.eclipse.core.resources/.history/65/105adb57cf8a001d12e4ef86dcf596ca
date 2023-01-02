@@ -1,0 +1,8 @@
+package exceptions;
+
+@SuppressWarnings("serial")
+public class InextlentBookException extends RuntimeException {
+	
+	public Inex
+
+}

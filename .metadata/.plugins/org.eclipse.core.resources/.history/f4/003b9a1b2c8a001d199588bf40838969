@@ -1,0 +1,7 @@
+package libraryAcessSystem;
+
+public class LibrarySystem {
+	
+	private Student student;
+
+}

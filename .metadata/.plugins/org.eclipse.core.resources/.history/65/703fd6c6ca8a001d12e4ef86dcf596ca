@@ -1,0 +1,11 @@
+package libraryAccessSystem.services;
+
+import libraryAccessSystem.LibrarySystem;
+
+public class BookCheckingService {
+	
+	public void chosenBookProcessing(LibrarySystem librarySystem, String chosenBook) {
+		
+	}
+
+}

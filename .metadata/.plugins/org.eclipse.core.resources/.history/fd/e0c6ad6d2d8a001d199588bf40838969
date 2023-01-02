@@ -1,0 +1,25 @@
+package studentEntities;
+
+import library.Book;
+
+public class Student {
+	
+	private Book book;
+	
+	private Invoice invoice;
+	private Register register;
+	
+	// Construtores da classe
+	
+	public Student() {
+	}
+	
+	public Student(Book book, Invoice invoice, Register register) {
+		this.book = book;
+		this.invoice = invoice;
+		this.register = register;
+	}
+	
+	// Getters e setters
+
+}

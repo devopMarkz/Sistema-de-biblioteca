@@ -1,0 +1,11 @@
+package fileSearchOfStudentRegister;
+
+import java.util.List;
+
+import studentEntities.Register;
+
+public interface RegisterSearchService {
+	
+	List<Register> getStudentRegister();
+
+}

@@ -1,0 +1,41 @@
+package libraryAcessSystem;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import fileSearchOfStudentRegister.RegisterSearchService;
+import studentEntities.Register;
+import studentEntities.Student;
+
+public class AccessValidationService implements ValidationService {
+	
+	private List<Register> studentRegistrationList = new ArrayList<>();
+	
+	// Construtores da classe
+	
+	public AccessValidationService() {
+	}
+
+	public AccessValidationService(RegisterSearchService registrationList) {
+		this.studentRegistrationList = registrationList.getStudentRegister();
+	}
+	
+	// Getters e setters
+
+	public List<Register> getStudentRegistrationList() {
+		return studentRegistrationList;
+	}
+	
+	// Métodos da classe
+
+	@Override
+	public Student giveStudentAccess(String id, Strind password) {
+		for (Register register : studentRegistrationList) {
+			if (student.getRegister().toString().equals(register.toString())) {
+				student.setRegister(register);
+			}
+		}
+		return null;
+	}
+
+}

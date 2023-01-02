@@ -1,0 +1,7 @@
+package libraryAccessSystem.invoiceServices;
+
+public class ProcessInvoiceService {
+	
+	private Double basicQuote;
+
+}

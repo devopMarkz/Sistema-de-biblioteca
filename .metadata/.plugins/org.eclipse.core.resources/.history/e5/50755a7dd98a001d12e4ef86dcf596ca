@@ -1,0 +1,16 @@
+package libraryAccessSystem.services;
+
+import java.io.File;
+import java.util.List;
+
+import studentEntities.Register;
+
+public interface RegisterSearchService {
+	
+	default File getFileOfStudentRegistration() {
+		return StudentRegisterStorageService.studentRegisterFile;
+	}
+	
+	List<Register> getStudentRegister();
+
+}

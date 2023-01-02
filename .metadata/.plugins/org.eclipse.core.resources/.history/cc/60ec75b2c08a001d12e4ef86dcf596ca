@@ -1,0 +1,11 @@
+package libraryAcessSystem;
+
+import studentEntities.Student;
+
+public class LibrarySystem {
+	
+	private Student student;
+	private LibrarySearchService searchBooksInTheLibrary;
+	
+
+}

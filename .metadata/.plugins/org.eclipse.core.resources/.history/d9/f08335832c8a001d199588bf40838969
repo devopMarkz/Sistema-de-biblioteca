@@ -1,0 +1,16 @@
+package studentEntities;
+
+public class Invoice {
+	
+	private Double bookRentalPrice;
+	
+	public Invoice() {
+	}
+
+	public Invoice(Double bookRentalPrice) {
+		this.bookRentalPrice = bookRentalPrice;
+	}
+	
+	
+
+}
